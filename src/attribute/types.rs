@@ -2,6 +2,7 @@
 #[derive(Copy, Clone, FromPrimitive)]
 pub enum StunAttributeType {
     MappedAddress = 0x0001,
+    ChangedAddress = 0x0005,
     Username = 0x0006,
     MessageIntegrity = 0x0008,
     ErrorCode = 0x0009,

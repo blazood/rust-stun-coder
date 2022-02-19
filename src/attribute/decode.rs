@@ -181,6 +181,10 @@ impl StunAttribute {
 
                 Ok(Self::MappedAddress { socket_addr })
             }
+            StunAttributeType::ChangedAddress => {
+                let socket_addr = Self::decode_address(&attr_data, false, transaction_id)?;
+                Ok(Self::ChangedAddress { socket_addr })
+            }
             StunAttributeType::Username => {
                 let raw_val = Self::decode_utf8_val(&attr_data)?;
 

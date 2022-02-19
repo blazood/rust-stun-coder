@@ -183,6 +183,10 @@ impl StunAttribute {
                 StunAttributeType::MappedAddress,
                 Self::encode_address(socket_addr, false, transaction_id),
             ),
+            StunAttribute::ChangedAddress {socket_addr} => (
+                StunAttributeType::ChangedAddress,
+                Self::encode_address(socket_addr, false, transaction_id),
+            ),
             StunAttribute::Username { value } => (
                 StunAttributeType::Username,
                 Self::encode_utf8_val(value, Some(513)),
